@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://wh7h6w1blb1x"]
+
+[ext_resource type="Script" uid="uid://c7owac1j8tow" path="res://scripts/scriptMenu/StartGame.gd" id="1_j0t7f"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 113.0
+offset_right = 643.0
+offset_bottom = 183.0
+text = "paly
+"
+script = ExtResource("1_j0t7f")
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 232.0
+offset_right = 643.0
+offset_bottom = 302.0
+text = "exit
+"
+
+[connection signal="pressed" from="Button" to="Button" method="change_level"]

@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=3 uid="uid://8rrrfimd15w"]
+
+[ext_resource type="Texture2D" uid="uid://dsyxv3ywi00ye" path="res://images/Suslicks/ordinarySuslick/DethSuslick.png" id="1_wnofm"]
+[ext_resource type="Script" uid="uid://ctb0w640py8qu" path="res://scripts/scriptBase/Suslick.gd" id="1_xqjbb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqjbb"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(0, 1281, 630, 1281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xie7j"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(630, 1281, 630, 1281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cqx4"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(1260, 1281, 630, 1281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjslm"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(1890, 1281, 630, 1281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kovl3"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(2520, 1281, 630, 1281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kjtxi"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(3150, 1281, 630, 1281)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q5xf"]
+atlas = ExtResource("1_wnofm")
+region = Rect2(0, 1278, 479, 1278)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1q5xf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqjbb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xie7j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cqx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjslm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kovl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kjtxi")
+}],
+"loop": true,
+"name": &"DEATH",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"DOWN",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"LEFT_RIGHT",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1q5xf")
+}],
+"loop": true,
+"name": &"STATE",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"UP",
+"speed": 5.0
+}]
+
+[node name="Suslick" type="CharacterBody2D"]
+script = ExtResource("1_xqjbb")
+
+[node name="AnimatedSuslick2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.937496, 3.76042)
+scale = Vector2(0.124008, 0.115161)
+sprite_frames = SubResource("SpriteFrames_1q5xf")
+animation = &"STATE"

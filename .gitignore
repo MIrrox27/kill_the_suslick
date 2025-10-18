@@ -1,0 +1,18 @@
+# Godot 4+ specific ignores
+.godot/
+.Godot/
+.import/
+Thumbs.db
+/bin/
+/build/
+/export/ 
+*.atsrc
+*.gdc
+*.gde
+*.gdt
+*.json
+*.csproj 
+.mono/ 
+*.log
+*cache*
+/android/

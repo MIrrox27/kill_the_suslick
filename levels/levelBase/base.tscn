@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckw6rdykdqahs"]
+
+[ext_resource type="PackedScene" uid="uid://bgry0gd8u0iwm" path="res://levels/levelBase/player.tscn" id="1_xi00n"]
+[ext_resource type="PackedScene" uid="uid://8rrrfimd15w" path="res://levels/levelBase/Suslick.tscn" id="2_kc1r4"]
+
+[node name="Base" type="Node2D"]
+position = Vector2(1, -1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 426.0
+offset_top = 23.0
+offset_right = 690.0
+offset_bottom = 168.0
+text = "ЭТО БУДЕТ ОСНОВНОЙ УРОВЕНЬ"
+
+[node name="Player" parent="." instance=ExtResource("1_xi00n")]
+position = Vector2(577, 323)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="Suslick" parent="." instance=ExtResource("2_kc1r4")]
+position = Vector2(425, 179)
