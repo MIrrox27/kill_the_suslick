@@ -14,7 +14,7 @@ offset_bottom = 168.0
 text = "ЭТО БУДЕТ ОСНОВНОЙ УРОВЕНЬ"
 
 [node name="Player" parent="." instance=ExtResource("1_xi00n")]
-position = Vector2(577, 323)
+position = Vector2(576, 326)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
@@ -23,4 +23,4 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="Suslick" parent="." instance=ExtResource("2_kc1r4")]
-position = Vector2(425, 179)
+position = Vector2(924, 301)

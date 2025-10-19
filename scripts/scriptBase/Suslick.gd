@@ -10,48 +10,28 @@ enum{
 }
 
 var speed = 100
-var  suslick_dir = DOWN
 @onready var animation = $AnimatedSuslick2D
-
-
-func moveUP():
-	animation.play("UP") # для анимации
-	velocity.x = 0
-	velocity.y = -speed
-	suslick_dir = UP 
+var player = null	
 	
-func moveDOWN():
-	animation.play("DOWN") # для анимации 
-	velocity.x = 0
-	velocity.y = speed
-	suslick_dir = DOWN
+func _physics_process(delta):
+	var direction = Vector2.ZERO
 
-func moveLEFT():
-	animation.flip_h = true
-	animation.play("LEFT_RIGHT") # для анимации
-	velocity.x = -speed
-	velocity.y = 0
-	suslick_dir = LEFT_RIGHT
+	if Input.is_action_pressed("ui_right"):
+		direction.x += 1
+	if Input.is_action_pressed("ui_left"):
+		direction.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		direction.y += 1
+	if Input.is_action_pressed("ui_up"):
+		direction.y -= 1
+	if direction != Vector2.ZERO:
+		move_and_collide(direction.normalized() * speed * delta)
 
-func moveRIGHT():
-	animation.flip_h = false
-	animation.play("LEFT_RIGHT") # для анимации
-	velocity.x = speed
-	velocity.y = 0
-	suslick_dir = LEFT_RIGHT
-
-func death():
-	animation.flip_h = false
-	velocity.x = 0
-	velocity.y = 0
-	animation.flip_h("DEATH")
-	suslick_dir = DEATH
+func _on_detector_body_entered(body: Node2D) -> void:
+	if body.name == "player":
+		player = body
 
 
-
-func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("interaction"):
-		death()
-	else:
-		pass	
-	
+func _on_detector_body_exited(body: Node2D) -> void:
+	if body.name == "player":
+		player = null
