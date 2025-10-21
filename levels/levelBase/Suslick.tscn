@@ -208,7 +208,6 @@ debug_color = Color(0.840037, 0.368464, 0.290173, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 4
 position = Vector2(13, -5)
-scale = Vector2(1, 1)
 shape = SubResource("CapsuleShape2D_xqjbb")
 one_way_collision_margin = 0.0
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
