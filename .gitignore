@@ -10,6 +10,7 @@ Thumbs.db
 *.gdc
 *.gde
 *.gdt
+*.png.import
 *.json
 *.csproj 
 .mono/ 
